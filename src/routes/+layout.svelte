@@ -1,38 +1,41 @@
 <script>
 	import { fade, fly } from "svelte/transition";
 	import { elasticOut, bounceOut } from "svelte/easing";
-	import { page } from "$app/stores";
 
 	import "../fonts.css";
 	import "../app.css";
 
 	import Navbar from "../lib/Navbar.svelte";
 	import Footer from "../lib/Footer.svelte";
+
+	export let data;
 </script>
 
-<div class="relative">
-	<div class="absolute flex justify-center z-[-1] w-screen h-screen items-center overflow-clip">
-		<p class="font-bookman text-center text-gray-800 text-[20vw]">
-			{#if $page.url.pathname == "/"}
-				LANDING
-			{:else if $page.url.pathname == "/about/"}
-				ABOUT
-			{:else if $page.url.pathname == "/projects/"}
-				PROJECTS
-			{:else if $page.url.pathname == "/contact/"}
-				CONTACT
-			{/if}
-		</p>
-	</div>
-	<div class="flex flex-col justify-between w-screen h-screen">
+<div class="relative w-screen h-screen overflow-hidden">
+	{#key data.url}
+		<div class="absolute flex justify-center z-[-1] w-screen h-screen items-center" transition:fade={{ duration: 200 }}>
+			<p class="font-bookman text-center text-gray-800 text-[20vw]">
+				{#if data.url == "/"}
+					LANDING
+				{:else if data.url == "/about"}
+					ABOUT
+				{:else if data.url == "/projects"}
+					PROJECTS
+				{:else if data.url == "/contact"}
+					CONTACT
+				{/if}
+			</p>
+		</div>
+	{/key}
+
+	<div class="absolute flex flex-col justify-between w-screen h-screen">
 		<Navbar />
-
-		{#key $page.url.pathname}
-			<div in:fly={{ delay: 150, duration: 800, y: 40, easing: bounceOut }}>
-				<slot />
-			</div>
-		{/key}
-
 		<Footer />
 	</div>
+
+	{#key data.url}
+		<div class="absolute w-screen h-screen flex justify-center items-center z-[-1]" in:fly={{ delay: 200, duration: 1300, y: 40, easing: elasticOut }} out:fade={{ duration: 200 }}>
+			<slot />
+		</div>
+	{/key}
 </div>
