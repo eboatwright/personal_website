@@ -1,3 +1,6 @@
 <div class="flex flex-row pl-12 pb-6">
-	<h1 class="font-bookman text-gray-400 text-xs pt-6">© 2024 Evan Boatwright</h1>
+	<p class="font-bookman text-gray-500 text-[0.6rem] md:text-xs pt-6">
+		© 2024 Evan Boatwright<br>
+		Powered by SvelteKit + TailwindCSS
+	</p>
 </div>
