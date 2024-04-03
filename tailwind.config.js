@@ -13,7 +13,7 @@ export default {
       	  "88%": { transform: "rotate(-12deg)" },
       	  "92%": { transform: "rotate(10deg)" },
       	  "96%": { transform: "rotate(-6deg)" },
-      	  "100 %": { transform: "rotate(0deg)" },
+      	  "100%": { transform: "rotate(0deg)" },
       	}
       },
       animation: {
