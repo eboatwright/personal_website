@@ -30,12 +30,15 @@
 
 	<div class="absolute flex flex-col justify-between w-screen h-screen">
 		<Navbar />
+
+		<div class="relative flex justify-center items-center">
+			{#key data.url}
+				<div class="absolute" in:fly={{ delay: 200, duration: 1300, y: 40, easing: elasticOut }} out:fade={{ duration: 200 }}>
+					<slot />
+				</div>
+			{/key}
+		</div>
+
 		<Footer />
 	</div>
-
-	{#key data.url}
-		<div class="absolute w-screen h-screen flex justify-center items-center z-[-1]" in:fly={{ delay: 200, duration: 1300, y: 40, easing: elasticOut }} out:fade={{ duration: 200 }}>
-			<slot />
-		</div>
-	{/key}
 </div>
