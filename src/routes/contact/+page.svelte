@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Evan Boatwright / Contact</title>
+</svelte:head>
+
 <script>
 </script>
 
