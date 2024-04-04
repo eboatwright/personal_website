@@ -29,10 +29,10 @@
 						LANDING
 					{:else if data.url == "/about"}
 						ABOUT
-					{:else if data.url == "/projects"}
-						PROJECTS
 					{:else if data.url == "/contact"}
 						CONTACT
+					{:else if data.url.includes("/projects")}
+						PROJECTS
 					{/if}
 				</p>
 			</div>
@@ -42,7 +42,7 @@
 			<Navbar />
 
 			{#key data.url}
-				<div class="" in:fly={{ delay: 50, duration: 1300, y: 40, easing: elasticOut }}> <!--out:fade={{ duration: 200 }}-->
+				<div class="px-12" in:fly={{ delay: 50, duration: 1300, y: 40, easing: elasticOut }}>
 					<slot />
 				</div>
 			{/key}

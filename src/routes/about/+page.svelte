@@ -5,7 +5,7 @@
 <script>
 </script>
 
-<div class="flex flex-row px-12 items-start">
+<div class="flex flex-row items-start">
 	<img src="/images/me/1.png" class="rounded-2xl shadow-xl w-0 md:w-1/3 md:mr-6" title="Me operating a telescope" alt="Me operating a telescope" />
 	<p class="font-bookman text-gray-100 text-xs md:text-sm text-center md:text-left lg:text-base">
 		My name is Evan Boatwright, and I'm a self-taught, home-schooled programmer from central Texas.
