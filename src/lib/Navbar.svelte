@@ -1,3 +1,7 @@
+<script>
+	import HorizontalDivider from "./HorizontalDivider.svelte";
+</script>
+
 <div class="flex flex-col w-screen space-y-6 px-12 pt-6">
 	<div class="flex flex-row items-center justify-between">
 		<a href="/" class="shrink-0 p-1 transition-transform duration-500 hover:animate-shake"><img src="/images/logo.png" width="48" alt="E" /></a>
@@ -11,5 +15,5 @@
 		<a href="https://github.com/eboatwright" target="_blank" title="Github" class="shrink-0"><img src="/images/github.png" width="28" alt="Github" /></a>
 	</div>
 
-	<div class="h-[1px] bg-gray-700"></div>
+	<HorizontalDivider />
 </div>
